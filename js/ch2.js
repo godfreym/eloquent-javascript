@@ -28,3 +28,12 @@ for (var counter = 0; counter < 10; counter = counter + 1) {
   line = line + "#";
   document.write(line);
 }
+
+/* Ex 2.5 */
+var answer = prompt("Godfrey! What is the value of 2 + 2?", "");
+if (answer == "4")
+  alert("You must be a genius or something.");
+else if (answer == "3" || answer == "5")
+  alert("Almost!");
+else
+  alert("You're an embarrassment.");
