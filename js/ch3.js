@@ -1,3 +1,4 @@
+/* Ex 3.1 */
 function absolute(number){
 if (number<0)
 return -number;
@@ -17,3 +18,12 @@ function findSequence(goal) {
   }
   return find(1, "1");
 }
+
+/* Ex 3.2 */
+function greaterThan(x) {
+  return function(y) {
+    return y > x;
+  };
+}
+
+var greaterThanTen = greaterThan(10);
