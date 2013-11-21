@@ -17,3 +17,14 @@ while (counter < 10) {
   document.write(line);
   counter = counter + 1;
 }
+
+/* Ex 2.4 */
+var forLoopResult = 1;
+for (var counter = 0; counter < 10; counter = counter + 1)
+  forLoopResult = forLoopResult * 2;
+  
+var line = "";
+for (var counter = 0; counter < 10; counter = counter + 1) {
+  line = line + "#";
+  document.write(line);
+}
