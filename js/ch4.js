@@ -19,3 +19,9 @@ function range(upto) {
 function startsWith(string, pattern) {
   return string.slice(0, pattern.length) == pattern;
 }
+
+/* Ex 4.5 */
+function catNames(paragraph) {
+  var colon = paragraph.indexOf(":");
+  return paragraph.slice(colon + 2).split(", ");
+}
