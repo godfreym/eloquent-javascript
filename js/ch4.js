@@ -14,3 +14,7 @@ function range(upto) {
     result[i] = i;
   return result;
 }
+
+/* Ex 4.3 */
+var array = ["a", "b", "c d"];
+console.log(array.join(" ").split(" "));
