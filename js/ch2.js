@@ -32,24 +32,24 @@ for (var counter = 0; counter < 10; counter = counter + 1) {
 /* Ex 2.5 */
 var answer = prompt("Godfrey! What is the value of 2 + 2?", "");
 if (answer == "4")
-  alert("You must be a genius or something.");
+  console.log("You must be a genius or something.");
 else if (answer == "3" || answer == "5")
-  alert("Almost!");
+  console.log("Almost!");
 else
-  alert("You're an embarrassment.");
+  console.log("You're an embarrassment.");
  
 /* Ex 2.6 */ 
 var answer;
 while (true) {
   answer = prompt("You! What is the value of 2 + 2?", "");
   if (answer == "4") {
-    alert("You must be a genius or something.");
+    console.log("You must be a genius or something.");
     break;
   }
   else if (answer == "3" || answer == "5") {
-    alert("Almost!");
+    console.log("Almost!");
   }
   else {
-    alert("You're an embarrassment.");
+    console.log("You're an embarrassment.");
   }
 }
