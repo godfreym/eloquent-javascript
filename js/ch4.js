@@ -4,4 +4,4 @@ set["White Fang"] = true;
 // Remove "Spot"
 delete set["Spot"];
 // See if "Asoka" is in the set
-show("Asoka" in set);
+console.log("Asoka" in set);
