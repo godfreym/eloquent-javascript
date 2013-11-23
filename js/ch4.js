@@ -14,3 +14,9 @@ function range(upto) {
     result[i] = i;
   return result;
 }
+
+/* Ex 4.4 */
+function startsWith(string, pattern) {
+  return string.slice(0, pattern.length) == pattern;
+}
+
