@@ -25,3 +25,12 @@ function catNames(paragraph) {
   var colon = paragraph.indexOf(":");
   return paragraph.slice(colon + 2).split(", ");
 }
+
+/* Ex 4.6 */
+function extractDate(paragraph) {
+  function numberAt(start, length) {
+    return Number(paragraph.slice(start, start + length));
+  }
+  return new Date(numberAt(11, 4), numberAt(8, 2) - 1,
+                  numberAt(5, 2));
+}
