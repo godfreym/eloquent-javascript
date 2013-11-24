@@ -34,3 +34,10 @@ function extractDate(paragraph) {
   return new Date(numberAt(11, 4), numberAt(8, 2) - 1,
                   numberAt(5, 2));
 }
+
+/* Ex 4.7 */
+function between(string, start, end) {
+  var startAt = string.indexOf(start) + start.length;
+  var endAt = string.indexOf(end, startAt);
+  return string.slice(startAt, endAt);
+}
