@@ -42,25 +42,4 @@ function between(string, start, end) {
   return string.slice(startAt, endAt);
 }
 
-/* cat-algorithm */
-function findCats() {
-  var mailArchive = retrieveMails();
-  var cats = {"Spot": catRecord("Spot", new Date(1997, 2, 5),
-              "unknown")};
-
-  function handleParagraph(paragraph) {
-    if (startsWith(paragraph, "born"))
-      addCats(cats, catNames(paragraph), extractDate(paragraph),
-              extractMother(paragraph));
-    else if (startsWith(paragraph, "died"))
-      deadCats(cats, catNames(paragraph), extractDate(paragraph));
-  }
-
-  for (var mail = 0; mail < mailArchive.length; mail++) {
-    var paragraphs = mailArchive[mail].split("\n");
-    for (var i = 0; i < paragraphs.length; i++)
-      handleParagraph(paragraphs[i]);
-  }
-  return cats;
-}
-console.log(findCats());
+/* Ex 4.8  */
