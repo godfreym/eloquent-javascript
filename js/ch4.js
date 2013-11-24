@@ -53,3 +53,20 @@ function formatDate(date) {
   return pad(date.getDate()) + "/" + pad(date.getMonth() + 1) +
              "/" + date.getFullYear();
 }
+
+/* Ex 4.9 */
+function oldestCat(data) {
+  var oldest = null;
+
+  for (var name in data) {
+    var cat = data[name];
+    if (!("death" in cat) &&
+        (oldest == null || oldest.birth > cat.birth))
+      oldest = cat;
+  }
+
+  if (oldest == null)
+    return null;
+  else
+    return oldest.name;
+}
