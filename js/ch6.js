@@ -169,3 +169,35 @@ function renderHTML(element) {
   render(element);
   return pieces.join("");
 }
+
+/* Ex. 6.5 */
+function footnote(number) {
+  return tag("sup", [link("#footnote" + number,
+                          String(number))]);
+}
+function renderParagraph(paragraph) {
+  return tag(paragraph.type, map(renderFragment,
+                                 paragraph.content));
+}
+
+function renderFragment(fragment) {
+  if (fragment.type == "reference")
+    return footnote(fragment.number);
+  else if (fragment.type == "emphasised")
+    return tag("em", [fragment.content]);
+  else if (fragment.type == "normal")
+    return fragment.content;
+}
+function renderFootnote(footnote) {
+  var number = "[" + footnote.number + "] ";
+  var anchor = tag("a", [number], {name: "footnote" + footnote.number});
+  return tag("p", [tag("small", [anchor, footnote.content])]);
+}
+function renderFile(file, title) {
+  var paragraphs = map(processParagraph, file.split("\n\n"));
+  var footnotes = map(renderFootnote,
+                      extractFootnotes(paragraphs));
+  var body = map(renderParagraph, paragraphs).concat(footnotes);
+  return renderHTML(htmlDoc(title, body));
+}
+console.log(viewHTML(renderFile(recluseFile(), "The Book of Programming")));
