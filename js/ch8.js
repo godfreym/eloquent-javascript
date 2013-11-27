@@ -232,3 +232,21 @@ var pushTest = bind(testArray.push, testArray);
 pushTest("A");
 pushTest("B");
 console.log(testArray);
+
+/* Ex. 8.4 */
+function method(object, name) {
+  return function() {
+    return object[name].apply(object, arguments);
+  };
+}
+
+var pushTest = method(testArray, "push");
+
+Terrarium.prototype.listActingCreatures = function() {
+  var found = [];
+  this.grid.each(function(point, value) {
+    if (value != undefined && value.act)
+      found.push({object: value, point: point});
+  });
+  return found;
+};
