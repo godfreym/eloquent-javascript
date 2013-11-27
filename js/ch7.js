@@ -100,6 +100,13 @@ function any(test, array) {
   return false;
 }
 
+function partial(func) {
+  var fixedArgs = asArray(arguments, 1);
+  return function(){
+    return func.apply(null, fixedArgs.concat(asArray(arguments)));
+  };
+}
+
 function member(array, value) {
   return any(partial(op["==="], value), array);
 }
