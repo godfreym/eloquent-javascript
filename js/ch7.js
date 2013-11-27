@@ -240,4 +240,5 @@ function possibleDirections(from) {
   return filter(insideMap, map(partial(addPoints, from),
                                directions));
 }
+console.log(possibleDirections(point(0, 0)));
 
