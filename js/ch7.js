@@ -329,3 +329,5 @@ function findRoute(from, to) {
   }
   return null;
 }
+/* Well, let us try our path-finder*/
+var route = findRoute(point(0, 0), point(19, 19));
