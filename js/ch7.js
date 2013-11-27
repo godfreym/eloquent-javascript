@@ -90,3 +90,18 @@ function forEach(array, action) {
       throw exception;
   }
 }
+
+function any(test, array) {
+  for (var i = 0; i < array.length; i++) {
+    var found = test(array[i]);
+    if (found)
+      return found;
+  }
+  return false;
+}
+
+function member(array, value) {
+  return any(partial(op["==="], value), array);
+}
+
+console.log(member(["Fear", "Loathing"], "Denial"));
