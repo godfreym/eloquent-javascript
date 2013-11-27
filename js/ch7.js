@@ -28,3 +28,14 @@ makeRoads("Hanapaoa", "Mt Ootua", 3);
 makeRoads("Puamua", "Mt Ootua", 13, "Point Teohotepapapa", 14);
 
 console.log(roads["Airport"]);
+
+/* Roads from calling */
+function roadsFrom(place) {
+  var found = roads[place];
+  if (found == undefined)
+    throw new Error("No place named '" + place + "' found.");
+  else
+    return found;
+}
+
+console.log(roadsFrom("Puamua"));
