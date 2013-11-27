@@ -165,3 +165,8 @@ var directions = new Dictionary(
    "nw": new Point(-1, -1)});
 
 console.log(new Point(4, 4).add(directions.lookup("se")));
+
+function StupidBug() {};
+StupidBug.prototype.act = function(surroundings) {
+  return {type: "move", direction: "s"};
+};
