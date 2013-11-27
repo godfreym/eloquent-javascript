@@ -314,7 +314,7 @@ Dictionary.prototype.names = function() {
   return names;
 };
 
-show(directions.names());
+console.log(directions.names());
 
 function randomElement(array) {
   if (array.length == 0)
