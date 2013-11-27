@@ -220,3 +220,15 @@ Terrarium.prototype.toString = function() {
 };
 var terrarium = new Terrarium(thePlan);
 console.log(terrarium.toString());
+
+function bind(func, object) {
+  return function(){
+    return func.apply(object, arguments);
+  };
+}
+
+var testArray = [];
+var pushTest = bind(testArray.push, testArray);
+pushTest("A");
+pushTest("B");
+console.log(testArray);
