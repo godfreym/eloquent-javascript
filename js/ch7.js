@@ -273,3 +273,20 @@ function findReached(list, point) {
   else
     return inner[point.y];
 }
+
+/* Alternatively to above three functions */
+function pointID(point) {
+  return point.x + "-" + point.y;
+}
+
+function makeReachedList() {
+  return {};
+}
+
+function storeReached(list, point, route) {
+  list[pointID(point)] = route;
+}
+
+function findReached(list, point) {
+  return list[pointID(point)];
+}
