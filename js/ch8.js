@@ -25,7 +25,7 @@ function Rabbit(adjective) {
   this.adjective = adjective;
 }
 Rabbit.prototype.speak = function(line) {
-  print("The ", this.adjective, " rabbit says '", line, "'");
+  console.log("The ", this.adjective, " rabbit says '", line, "'");
 };
 
 var hazelRabbit = new Rabbit("hazel");
