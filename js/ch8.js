@@ -19,3 +19,14 @@ function Rabbit(adjective) {
 
 var killerRabbit = new Rabbit("killer");
 killerRabbit.speak("GRAAAAAAAAAH!");
+
+/* Prototype */
+function Rabbit(adjective) {
+  this.adjective = adjective;
+}
+Rabbit.prototype.speak = function(line) {
+  print("The ", this.adjective, " rabbit says '", line, "'");
+};
+
+var hazelRabbit = new Rabbit("hazel");
+hazelRabbit.speak("Good Frith!");
