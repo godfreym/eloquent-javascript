@@ -84,3 +84,19 @@ console.log(colours.contains("constructor"));
 colours.each(function(name, colour) {
   console.log(name, " is ", colour);
 });
+
+
+/* The plan */
+var thePlan =
+  ["############################",
+   "#      #    #      o      ##",
+   "#                          #",
+   "#          #####           #",
+   "##         #   #    ##     #",
+   "###           ##     #     #",
+   "#           ###      #     #",
+   "#   ####                   #",
+   "#   ##       o             #",
+   "# o  #         o       ### #",
+   "#    #                     #",
+   "############################"];
