@@ -200,3 +200,13 @@ function getProperty(propName) {
 function shortestRoute(from, to) {
   return minimise(getProperty("length"), possibleRoutes(from, to));
 }
+
+/* Requirements for Ex. 7.4 */
+console.log(heightAt({x: 0, y: 0}));
+console.log(heightAt({x: 11, y: 18}));
+function weightedDistance(pointA, pointB) {
+  var heightDifference = heightAt(pointB) - heightAt(pointA);
+  var climbFactor = (heightDifference < 0 ? 1 : 2);
+  var flatDistance = (pointA.x == pointB.x || pointA.y == pointB.y ? 100 : 141);
+  return flatDistance + climbFactor * Math.abs(heightDifference);
+}
