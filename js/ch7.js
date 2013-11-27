@@ -112,3 +112,22 @@ function member(array, value) {
 }
 
 console.log(member(["Fear", "Loathing"], "Denial"));
+
+function every(test, array) {
+  for (var i = 0; i < array.length; i++) {
+    var found = test(array[i]);
+    if (!found)
+      return found;
+  }
+  return true;
+}
+
+show(every(partial(op["!="], 0), [1, 2, -1]));
+
+function flatten(arrays) {
+    var result = [];
+    forEach(arrays, function (array) {
+      forEach(array, function (element){result.push(element);});
+    });
+    return result;
+  }
