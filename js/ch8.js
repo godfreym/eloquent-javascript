@@ -350,3 +350,4 @@ var newPlan =
 var terrarium = new Terrarium(newPlan);
 terrarium.onStep = partial(inPlacePrinter(), terrarium);
 terrarium.start();
+terrarium.stop();
