@@ -293,3 +293,4 @@ Point.prototype.toString = function() {
 console.log(new Point(5, 5));
 
 var annoy = setInterval(function() {console.log("What?");}, 400);
+clearInterval(annoy);
