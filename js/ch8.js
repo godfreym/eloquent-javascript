@@ -294,3 +294,15 @@ console.log(new Point(5, 5));
 
 var annoy = setInterval(function() {console.log("What?");}, 400);
 clearInterval(annoy);
+/* modification.. */
+Terrarium.prototype.start = function() {
+  if (!this.running)
+    this.running = setInterval(bind(this.step, this), 500);
+};
+
+Terrarium.prototype.stop = function() {
+  if (this.running) {
+    clearInterval(this.running);
+    this.running = null;
+  }
+};
