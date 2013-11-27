@@ -167,3 +167,13 @@ function possibleRoutes(from, to) {
 }
 console.log(possibleRoutes("Point Teohotepapapa", "Point Kiukiu").length);
 console.log(possibleRoutes("Hanapaoa", "Mt Ootua"));
+
+/* Ex. 7.3 */
+function shortestRoute(from, to) {
+  var currentShortest = null;
+  forEach(possibleRoutes(from, to), function(route) {
+    if (!currentShortest || currentShortest.length > route.length)
+      currentShortest = route;
+  });
+  return currentShortest;
+}
