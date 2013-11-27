@@ -286,3 +286,10 @@ var terrarium = new Terrarium(thePlan);
 console.log(terrarium);
 terrarium.step();
 console.log(terrarium);
+
+Point.prototype.toString = function() {
+  return "(" + this.x + "," + this.y + ")";
+};
+console.log(new Point(5, 5));
+
+var annoy = setInterval(function() {console.log("What?");}, 400);
