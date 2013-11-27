@@ -322,7 +322,7 @@ function randomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-show(randomElement(["heads", "tails"]));
+console.log(randomElement(["heads", "tails"]));
 
 function DrunkBug() {};
 DrunkBug.prototype.act = function(surroundings) {
