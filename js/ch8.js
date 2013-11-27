@@ -250,3 +250,39 @@ Terrarium.prototype.listActingCreatures = function() {
   });
   return found;
 };
+
+/* Ex 8.5 */
+Terrarium.prototype.listSurroundings = function(center) {
+  var result = {};
+  var grid = this.grid;
+  directions.each(function(name, direction) {
+    var place = center.add(direction);
+    if (grid.isInside(place))
+      result[name] = characterFromElement(grid.valueAt(place));
+    else
+      result[name] = "#";
+  });
+  return result;
+};
+
+Terrarium.prototype.processCreature = function(creature) {
+  var surroundings = this.listSurroundings(creature.point);
+  var action = creature.object.act(surroundings);
+  if (action.type == "move" && directions.contains(action.direction)) {
+    var to = creature.point.add(directions.lookup(action.direction));
+    if (this.grid.isInside(to) && this.grid.valueAt(to) == undefined)
+      this.grid.moveValue(creature.point, to);
+  }
+  else {
+    throw new Error("Unsupported action: " + action.type);
+  }
+};
+
+Terrarium.prototype.step = function() {
+  forEach(this.listActingCreatures(),
+          bind(this.processCreature, this));
+};
+var terrarium = new Terrarium(thePlan);
+console.log(terrarium);
+terrarium.step();
+console.log(terrarium);
