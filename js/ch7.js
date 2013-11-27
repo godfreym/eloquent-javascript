@@ -61,3 +61,19 @@ function gamblerPath(from, to) {
 }
 
 console.log(gamblerPath("Hanaiapa", "Mt Feani"));
+
+/* Requirement for ex 7.2 */
+function forEach(array, action) {
+  for (var i = 0; i < array.length; i++)
+    action(array[i]);
+}
+
+function member(array, value) {
+  var found = false;
+  forEach(array, function(element) {
+    if (element === value)
+      found = true;
+  });
+  return found;
+}
+console.log(member([6, 7, "Bordeaux"], 7));
