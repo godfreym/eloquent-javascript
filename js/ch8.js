@@ -44,3 +44,16 @@ var chimera = {head: "lion", body: "goat", tail: "snake"};
 forEachIn(chimera, function(name, value) {
   console.log("The ", name, " of a ", value, ".");
 });
+
+/* modification of properties */
+function forEachIn(object, action) {
+  for (var property in object) {
+    if (Object.prototype.hasOwnProperty.call(object, property))
+      action(property, object[property]);
+  }
+}
+
+var test = {name: "Mordecai", hasOwnProperty: "Uh-oh"};
+forEachIn(test, function(name, value) {
+  console.log("Property ", name, " = ", value);
+});
