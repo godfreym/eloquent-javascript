@@ -165,3 +165,5 @@ function possibleRoutes(from, to) {
   }
   return findRoutes({places: [from], length: 0});
 }
+console.log(possibleRoutes("Point Teohotepapapa", "Point Kiukiu").length);
+console.log(possibleRoutes("Hanapaoa", "Mt Ootua"));
