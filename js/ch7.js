@@ -77,3 +77,16 @@ function member(array, value) {
   return found;
 }
 console.log(member([6, 7, "Bordeaux"], 7));
+
+var Break = {toString: function() {return "Break";}};
+
+function forEach(array, action) {
+  try {
+    for (var i = 0; i < array.length; i++)
+      action(array[i]);
+  }
+  catch (exception) {
+    if (exception != Break)
+      throw exception;
+  }
+}
