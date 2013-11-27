@@ -210,3 +210,19 @@ function weightedDistance(pointA, pointB) {
   var flatDistance = (pointA.x == pointB.x || pointA.y == pointB.y ? 100 : 141);
   return flatDistance + climbFactor * Math.abs(heightDifference);
 }
+
+function point(x, y) {
+  return {x: x, y: y};
+}
+
+function addPoints(a, b) {
+  return point(a.x + b.x, a.y + b.y);
+}
+
+function samePoint(a, b) {
+  return a.x == b.x && a.y == b.y;
+}
+
+console.log(samePoint(addPoints(point(10, 10), point(4, -2)),
+               point(14, 8)));
+
