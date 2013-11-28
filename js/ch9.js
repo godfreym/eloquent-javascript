@@ -16,3 +16,5 @@ function require(file) {
     load(file);
   }
 }
+require("TestModule.js");
+test();
