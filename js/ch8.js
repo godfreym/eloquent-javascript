@@ -530,3 +530,24 @@ CleverLichenEater.prototype.act = function(surroundings) {
 CleverLichenEater.prototype.character = "c";
 
 creatureTypes.register(CleverLichenEater);
+
+
+/* Inheritance */
+Object.prototype.inherit = function(baseConstructor) {
+  this.prototype = clone(baseConstructor.prototype);
+  this.prototype.constructor = this;
+};
+Object.prototype.method = function(name, func) {
+  this.prototype[name] = func;
+};
+
+function StrangeArray(){}
+StrangeArray.inherit(Array);
+StrangeArray.method("push", function(value) {
+  Array.prototype.push.call(this, value);
+  Array.prototype.push.call(this, value);
+});
+
+var strange = new StrangeArray();
+strange.push(4);
+console.log(strange);
