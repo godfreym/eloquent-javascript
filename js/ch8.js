@@ -483,3 +483,4 @@ var lichenPlan =
 var terrarium = new LifeLikeTerrarium(lichenPlan);
 terrarium.onStep = partial(inPlacePrinter(), terrarium);
 terrarium.start();
+terrarium.stop();
