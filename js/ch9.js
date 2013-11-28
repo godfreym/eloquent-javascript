@@ -40,3 +40,28 @@ function buildMonthNameModule() {
 buildMonthNameModule();
 
 console.log(getMonthName(11));
+
+/* modification.... */
+function provide(values) {
+  forEachIn(values, function(name, value) {
+    window[name] = value;
+  });
+}
+
+(function() {
+  var names = ["Sunday", "Monday", "Tuesday", "Wednesday",
+               "Thursday", "Friday", "Saturday"];
+  provide({
+    getDayName: function(number) {
+      return names[number];
+    },
+    getDayNumber: function(name) {
+      for (var number = 0; number < names.length; number++) {
+        if (names[number] == name)
+          return number;
+      }
+    }
+  });
+})();
+
+console.log(getDayNumber("Wednesday"));
