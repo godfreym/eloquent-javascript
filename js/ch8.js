@@ -348,7 +348,7 @@ var newPlan =
    "############################"];
 
 var terrarium = new Terrarium(newPlan);
-terrarium.onStep = partial(inPlacePrinter(), terrarium);
+terrarium.onStep = partial(inPlaceconsole.loger(), terrarium);
 terrarium.start();
 terrarium.stop();
 
@@ -481,7 +481,7 @@ var lichenPlan =
    "############################"];
 
 var terrarium = new LifeLikeTerrarium(lichenPlan);
-terrarium.onStep = partial(inPlacePrinter(), terrarium);
+terrarium.onStep = partial(inPlaceconsole.loger(), terrarium);
 terrarium.start();
 terrarium.stop();
 
@@ -586,3 +586,30 @@ var giantSloth = DetailedItem.create(
   "the giant sloth",
   "it is quietly hanging from a tree, munching leaves");
 giantSloth.inspect();
+
+var Monster = Item.extend({
+  construct: function(name, dangerous) {
+    Item.construct.call(this, name);
+    this.dangerous = dangerous;
+  },
+  kick: function() {
+    if (this.dangerous)
+      console.log(this.name, " bites your head off.");
+    else
+      console.log(this.name, " runs away, weeping.");
+  }
+});
+
+var DetailedMonster = DetailedItem.extend({
+  construct: function(name, description, dangerous) {
+    DetailedItem.construct.call(this, name, description);
+    Monster.construct.call(this, name, dangerous);
+  },
+  kick: Monster.kick
+});
+
+var giantSloth = DetailedMonster.create(
+  "the giant sloth",
+  "it is quietly hanging from a tree, munching leaves",
+  true);
+giantSloth.kick();
