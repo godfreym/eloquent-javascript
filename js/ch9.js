@@ -65,3 +65,17 @@ function provide(values) {
 })();
 
 console.log(getDayNumber("Wednesday"));
+
+/* another module */
+var HTML = {
+  tag: function(name, content, properties) {
+    return {name: name, properties: properties, content: content};
+  },
+  link: function(target, text) {
+    return HTML.tag("a", [text], {href: target});
+  }
+  /* ... many more HTML-producing functions ... */
+};
+provide(HTML);
+console.log(link("http://download.oracle.com/docs/cd/E19957-01/816-6408-10/object.htm",
+          "This is how objects work."));
