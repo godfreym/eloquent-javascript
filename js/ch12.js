@@ -25,3 +25,17 @@ function asHTML(node) {
 }
 
 console.log(asHTML(document.body));
+
+/* node settings */
+function setNodeAttribute(node, attribute, value) {
+  if (attribute == "class")
+    node.className = value;
+  else if (attribute == "checked")
+    node.defaultChecked = value;
+  else if (attribute == "for")
+    node.htmlFor = value;
+  else if (attribute == "style")
+    node.style.cssText = value;
+  else
+    node.setAttribute(attribute, value);
+}
