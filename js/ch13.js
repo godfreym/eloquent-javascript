@@ -131,3 +131,14 @@ var Square = {
 
 var testSquare = Square.create("@", dom("TD"));
 console.log(testSquare.hasPlayer());
+
+/* Ex. 13.2 */
+Square.moveContent = function(target) {
+  target.content = this.content;
+  this.content = null;
+  target.tableCell.appendChild(this.tableCell.lastChild);
+};
+Square.clearContent = function() {
+  this.content = null;
+  removeElement(this.tableCell.lastChild);
+};
