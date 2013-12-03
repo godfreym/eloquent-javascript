@@ -1,6 +1,6 @@
 
 var form = window.open("example_getinfo.html");
-
+attach(form);
 /* Ex. 11.1 */
 function validInfo(form) {
   return form.elements.name.value != "" &&
