@@ -133,7 +133,6 @@ function escapeHTML(text) {
   return text;
 }
 
-<<<<<<< HEAD
 /* Function to render html*/
 function renderHTML(element) {
   var pieces = [];
@@ -202,7 +201,7 @@ function renderFile(file, title) {
   return renderHTML(htmlDoc(title, body));
 }
 console.log(viewHTML(renderFile(recluseFile(), "The Book of Programming")));
-=======
+
 /* modified function escapeHTML */
 function escapeHTML(text) {
   var replacements = {"<": "&lt;", ">": "&gt;",
@@ -213,4 +212,4 @@ function escapeHTML(text) {
 }
 
 console.log(escapeHTML("The 'pre-formatted' tag is written \"<pre>\"."));
->>>>>>> function-escapeHTML
+
