@@ -22,3 +22,19 @@ function showEvent(event) {
 }
 
 registerEventHandler($("textfield"), "keypress", showEvent);
+
+/* Report a click */
+function reportClick(event) {
+  event = event || window.event;
+  var target = event.target || event.srcElement;
+  var pageX = event.pageX, pageY = event.pageY;
+  if (pageX == undefined) {
+    pageX = event.clientX + document.body.scrollLeft;
+    pageY = event.clientY + document.body.scrollTop;
+  }
+
+  print("Mouse clicked at ", pageX, ", ", pageY,
+        ". Inside element:");
+  show(target);
+}
+registerEventHandler(document, "click", reportClick);
