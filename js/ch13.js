@@ -6,4 +6,4 @@ function registerEventHandler(node, event, handler) {
 }
 
 registerEventHandler($("button"), "click",
-                     function(){print("Click (2)");});
+                     function(){console.log("Click (2)");});
