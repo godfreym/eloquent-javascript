@@ -38,3 +38,4 @@ function reportClick(event) {
   show(target);
 }
 registerEventHandler(document, "click", reportClick);
+unregisterEventHandler(document, "click", reportClick);
