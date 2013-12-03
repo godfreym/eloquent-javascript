@@ -11,6 +11,7 @@ console.log(userForm.action);
 
 var nameField = userForm.elements.name;
 nameField.value = "Eugène";
+
 /* Ex. 11.1 */
 function validInfo(form) {
   return form.elements.name.value != "" &&
@@ -18,4 +19,12 @@ function validInfo(form) {
 }
 
 console.log(validInfo(document.forms.userinfo));
+
+/* Ex. 11.2 */
+userForm.elements.send.onclick = function() {
+  if (validInfo(userForm))
+    userForm.submit();
+  else
+    alert("Give us a name and a valid e-mail address!");
+};
 
