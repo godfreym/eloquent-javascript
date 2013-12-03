@@ -7,3 +7,11 @@ function registerEventHandler(node, event, handler) {
 
 registerEventHandler($("button"), "click",
                      function(){console.log("Click (2)");});
+					 
+/* unregistering an event */					 
+function unregisterEventHandler(node, event, handler) {
+  if (typeof node.removeEventListener == "function")
+    node.removeEventListener(event, handler, false);
+  else
+    node.detachEvent("on" + event, handler);
+}
