@@ -1,3 +1,6 @@
+
+var form = window.open("example_getinfo.html");
+
 /* Ex. 11.1 */
 function validInfo(form) {
   return form.elements.name.value != "" &&
@@ -5,3 +8,4 @@ function validInfo(form) {
 }
 
 console.log(validInfo(document.forms.userinfo));
+
