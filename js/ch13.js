@@ -70,3 +70,21 @@ function normaliseEvent(event) {
 
   return event;
 }
+
+/* Handler adder */
+function addHandler(node, type, handler) {
+  function wrapHandler(event) {
+    handler(normaliseEvent(event || window.event));
+  }
+  registerEventHandler(node, type, wrapHandler);
+  return {node: node, type: type, handler: wrapHandler};
+}
+
+function removeHandler(object) {
+  unregisterEventHandler(object.node, object.type, object.handler);
+}
+
+var blockQ = addHandler($("textfield"), "keypress", function(event) {
+  if (event.character.toLowerCase() == "q")
+    event.stop();
+});
