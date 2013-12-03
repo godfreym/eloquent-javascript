@@ -63,3 +63,12 @@ var newParagraph =
           "link"),
       " inside of it.");
 document.body.appendChild(newParagraph);
+
+
+/* Ex. 12.2 */
+function removeElement(node) {
+  if (node.parentNode)
+    node.parentNode.removeChild(node);
+}
+
+removeElement(newParagraph)
