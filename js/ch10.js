@@ -24,3 +24,13 @@ function extractDate(string) {
 }
 
 console.log(extractDate("born 5/2/2007 (mother Noog): Long-ear Johnson"));
+
+/* More patterns */
+var badWords = ["ape", "monkey", "simian", "gorilla", "evolution"];
+var pattern = new RegExp(badWords.join("|"), "i");
+function isAcceptable(text) {
+  return !pattern.test(text);
+}
+
+console.log(isAcceptable("Mmmm, grapes."));
+console.log(isAcceptable("No more of that monkeybusiness, now."));
