@@ -9,4 +9,4 @@ function makeHttpObject() {
 
   throw new Error("Could not create HTTP request object.");
 }
-show(typeof(makeHttpObject()));
+console.log(typeof(makeHttpObject()));
