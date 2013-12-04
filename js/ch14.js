@@ -85,4 +85,4 @@ function simpleHttpRequest(url, success, failure) {
   };
 }
 
-simpleHttpRequest("files/fruit.txt", console.log);
+simpleHttpRequest("files/../fruit.txt", console.log);
