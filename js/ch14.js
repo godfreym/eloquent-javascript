@@ -14,4 +14,4 @@ console.log(typeof(makeHttpObject()));
 var request = makeHttpObject();
 request.open("GET", "files/fruit.txt", false);
 request.send(null);
-print(request.responseText);
+console.log(request.responseText);
