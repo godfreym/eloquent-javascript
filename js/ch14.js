@@ -19,3 +19,6 @@ console.log(request.responseText);
 /* displaying response headers */
 console.log(request.getAllResponseHeaders());
 console.log(request.getResponseHeader("Last-Modified"));
+
+console.log(request.status);
+console.log(request.statusText);
