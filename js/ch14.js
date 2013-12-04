@@ -10,3 +10,8 @@ function makeHttpObject() {
   throw new Error("Could not create HTTP request object.");
 }
 console.log(typeof(makeHttpObject()));
+
+var request = makeHttpObject();
+request.open("GET", "files/fruit.txt", false);
+request.send(null);
+print(request.responseText);
