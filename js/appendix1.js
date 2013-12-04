@@ -31,6 +31,7 @@ function weatherAdvice(weather) {
       break;
     case "sunny":
       console.log("Dress lightly.");
+	  break;
     case "cloudy":
       console.log("Go outside.");
       break;
