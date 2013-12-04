@@ -68,3 +68,21 @@ function serializeJSON(value) {
 }
 
 console.log(serializeJSON(fruit));
+
+
+/* A portable function for making http request */
+function simpleHttpRequest(url, success, failure) {
+  var request = makeHttpObject();
+  request.open("GET", url, true);
+  request.send(null);
+  request.onreadystatechange = function() {
+    if (request.readyState == 4) {
+      if (request.status == 200)
+        success(request.responseText);
+      else if (failure)
+        failure(request.status, request.statusText);
+    }
+  };
+}
+
+simpleHttpRequest("files/fruit.txt", console.log);
