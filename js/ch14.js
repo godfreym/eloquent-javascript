@@ -22,3 +22,10 @@ console.log(request.getResponseHeader("Last-Modified"));
 
 console.log(request.status);
 console.log(request.statusText);
+
+/* FUNCTION evalJSON */
+function evalJSON(json) {
+  return eval("(" + json + ")");
+}
+var fruit = evalJSON(request.responseText);
+console.log(fruit);
